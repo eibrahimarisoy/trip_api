@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-
+    'django.contrib.gis',
+    'rest_framework_gis',
+    
+    "core",
     'passengers',
     'journeys',
 ]
@@ -82,8 +85,9 @@ WSGI_APPLICATION = 'trip_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {"default": env.db("DATABASE_URL")}
-
+DATABASES = {
+    "default": env.db("DATABASE_URL")
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -162,3 +166,4 @@ if not DEBUG:
         }
     )
 
+AUTH_USER_MODEL = 'core.User'
