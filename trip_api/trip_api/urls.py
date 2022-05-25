@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from passengers.views import PassengerViewset
+from journeys.views import JourneyViewset
 from rest_framework import routers
 from rest_framework_simplejwt.views import (TokenObtainPairView,
                                             TokenRefreshView)
 
 router = routers.DefaultRouter()
 router.register(r'api/passengers', PassengerViewset)
+router.register(r'api/journeys', JourneyViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

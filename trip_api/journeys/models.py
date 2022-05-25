@@ -14,12 +14,14 @@ class Journey(BaseModel):
         related_name='journeys',
     )
     origin = models.PointField(
-        srid=4326,
+        geography=True,
+        default=Point(0, 0),
         null=True,
         blank=True,
     )
     destination = models.PointField(
-        srid=4326,
+        geography=True,
+        default=Point(0, 0),
         null=True,
         blank=True,
     )
