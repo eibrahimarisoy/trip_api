@@ -179,3 +179,5 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
     'USER_ID_FIELD': 'uuid',
 }
+
+CELERY_BROKER_URL = env('CELERY_BROKER_URL')
