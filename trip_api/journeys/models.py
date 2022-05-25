@@ -3,6 +3,7 @@ from django.contrib.gis.geos import Point
 
 from core.models import BaseModel
 # Create your models here.
+from django.contrib.gis.db.models.functions import Distance
 
 class Journey(BaseModel):
     """
@@ -49,6 +50,16 @@ class Journey(BaseModel):
     class Meta:
         verbose_name = "Journey"
         verbose_name_plural = "Journeys"
+    
+    def save(self, *args, **kwargs):
+        if self.distance is None and self.origin and self.destination:
+            self.distance = self.origin.distance(self.destination)
+
+        if self.duration is None and self.start_time and self.end_time:
+            self.duration = self.end_time - self.start_time
+
+        return super(Journey, self).save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.passenger.user.get_full_name()} - {self.start_time}"
+
