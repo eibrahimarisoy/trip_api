@@ -182,8 +182,8 @@ if not DEBUG:
 AUTH_USER_MODEL = 'core.User'
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
+    'ACCESS_TOKEN_LIFETIME': timedelta(seconds=env.int("ACCESS_TOKEN_LIFETIME")),
+    'REFRESH_TOKEN_LIFETIME': timedelta(seconds=env.int("REFRESH_TOKEN_LIFETIME")),
     'USER_ID_FIELD': 'uuid',
 }
 
