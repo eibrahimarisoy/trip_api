@@ -10,6 +10,7 @@ Anonymous user can only register and login the app.
 Authenticated user can;
  - create, update, delete, and get her/his trips.
  - update her/his profile.
+ - change her/his password.
 
 ## Using Tools
  - Django
@@ -51,6 +52,7 @@ There is a sample file `.example.env` in the project directory.
 ## Run the project
 ```
 $ python manage.py runserver
+$ celery -A trip_api worker -l info
 ```
 
 ## Run the project with swagger
