@@ -34,10 +34,6 @@ class Journey(BaseModel):
         null=True,
         blank=True,
     )
-    price = models.FloatField(
-        null=True,
-        blank=True,
-    )
     start_time = models.DateTimeField(
         null=True,
         blank=True,
@@ -62,4 +58,3 @@ class Journey(BaseModel):
 
     def __str__(self):
         return f"{self.passenger.user.get_full_name()} - {self.start_time}"
-

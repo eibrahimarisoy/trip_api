@@ -7,6 +7,12 @@ class Passenger(models.Model):
         on_delete=models.CASCADE,
         primary_key=True,
     )
+    # get the device associated with this passenger when only registered
+    device_type = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
 
     class Meta:
         verbose_name = "Passenger"
