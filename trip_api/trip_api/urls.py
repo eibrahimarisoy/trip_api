@@ -24,8 +24,8 @@ from django.conf import settings
 
 
 router = routers.DefaultRouter()
-router.register(r'api/passengers', PassengerViewset)
-router.register(r'api/journeys', JourneyViewset)
+router.register(r'api/v1/passengers', PassengerViewset)
+router.register(r'api/v1/journeys', JourneyViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

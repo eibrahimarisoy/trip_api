@@ -66,7 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'middleware.filter_ip_middleware.FilterIPMiddleware',
+    'middleware.device_type_middleware.FilterDeviceTypeMiddleware',
 
 ]
 
